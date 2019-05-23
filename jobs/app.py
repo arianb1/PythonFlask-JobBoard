@@ -51,5 +51,5 @@ def employer(employer_id):
     jobs = execute_sql('SELECT job.id, job.title, job.description, job.salary FROM job JOIN employer ON employer.id = job.employer_id WHERE employer.id=?', 
     [employer_id], single=False)
     reviews = execute_sql('SELECT review.review, review.rating, review.title, review.date, review.status FROM review JOIN employer ON employer.id = review.employer_id WHERE employer.id=?', 
-    [employer_id], single=False)
+    [employer_id])
     return render_template('employer.html', employer=employer, jobs=jobs, reviews=reviews)
