@@ -1,1 +1,1 @@
-web=1
+scale web=1
